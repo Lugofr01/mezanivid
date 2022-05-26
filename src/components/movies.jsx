@@ -13,6 +13,15 @@ class Movies extends Component {
     // redirecting the new state to the nmovies
   };
 
+  handleLike = (movie) => {
+    //
+    const movies = [...this.state.movies];
+    const index = movies.indexOf(movie);
+    movies[index] = { ...movies[index] };
+    movies[index].liked = !movies[index].liked;
+    this.setState({ movies });
+  };
+
   //   movie parameter since it gives us access for it to be deleted
 
   render() {
@@ -44,7 +53,10 @@ class Movies extends Component {
                   <td>{movie.numberInStock}</td>
                   <td>{movie.dailyRentalRate}</td>
                   <td>
-                    <Like />
+                    <Like
+                      liked={movie.liked}
+                      onClick={() => this.handleLike(movie)}
+                    />
                   </td>
                   <td>
                     {" "}
