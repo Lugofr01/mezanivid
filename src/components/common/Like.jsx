@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as fab } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
-import React, { Component } from "react";
+import React from "react";
 
 // parameters is liked or not liked and which is a bolean value T/F
 // output is onclick
@@ -34,30 +34,27 @@ import React, { Component } from "react";
 
 // export default Like;
 
-
-
 const Like = (props) => {
- 
   if (props.liked)
-  return (
-    <FontAwesomeIcon
-      icon={fab}
-      color="red"
-      size="lg"
-      onClick={props.onClick}
-      style={{ cursor: "pointer" }}
-    />
-  );
-else
-  return (
-    <FontAwesomeIcon
-      icon={faHeart}
-      color="red"
-      size="lg"
-      onClick={props.onClick}
-      style={{ cursor: "pointer" }}
-    />
-  );
-}
- 
+    return (
+      <FontAwesomeIcon
+        icon={fab}
+        color="red"
+        size="lg"
+        onClick={props.onClick}
+        style={{ cursor: "pointer" }}
+      />
+    );
+  else
+    return (
+      <FontAwesomeIcon
+        icon={faHeart}
+        color="red"
+        size="lg"
+        onClick={props.onClick}
+        style={{ cursor: "pointer" }}
+      />
+    );
+};
+
 export default Like;
