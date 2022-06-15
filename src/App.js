@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 // import logo from "./logo.svg";
 import Movies from "./components/movies";
+import Customers from "./components/customers";
+import NotFound from "./components/notFound";
+import Rentals from "./components/rentals";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 class App extends Component {
@@ -25,14 +28,17 @@ class App extends Component {
             {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
             <Switch>
-              <Route path="/about">
-                <About />
+              <Route path="/movies" component={Movies}></Route>
+
+              <Route path="/not-found">
+                <NotFound />
               </Route>
-              <Route path="/users">
-                <Users />
+
+              <Route path="/customers">
+                <Customers />
               </Route>
-              <Route path="/movies">
-                <Movies />
+              <Route path="/rentals">
+                <Rentals />
               </Route>
             </Switch>
           </div>
@@ -41,8 +47,6 @@ class App extends Component {
     );
   }
 }
-
-
 
 // this ones below emulate compnents and can therefore be imported
 
